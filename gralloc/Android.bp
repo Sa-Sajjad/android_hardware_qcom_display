@@ -227,10 +227,7 @@ cc_binary {
     ],
     cflags: [
         "-DLOG_TAG=\"qdgralloc\"",
-    ] + select(soong_config_variable("qtidisplay", "gralloc4"), {
-        "true": ["-DTARGET_USES_GRALLOC4"],
-        default: [],
-    }),
+    ],
     srcs: [
         "QtiAllocator.cpp",
         "service.cpp",

@@ -46,7 +46,6 @@ int main(int, char **) {
   }
   ALOGI("Initialized qti-allocator 3");
 
-#ifdef TARGET_USES_GRALLOC4
   android::sp<IQtiAllocator4> service4 =
       new vendor::qti::hardware::display::allocator::V4_0::implementation::QtiAllocator();
   if (service4->registerAsService() != android::OK) {
@@ -54,7 +53,6 @@ int main(int, char **) {
     return -EINVAL;
   }
   ALOGI("Initialized qti-allocator 4");
-#endif
 
   joinRpcThreadpool();
 
